@@ -1,8 +1,13 @@
+<p align="center">A project built using the Laravel Framework</p>
+<p align="center"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="313" alt="Laravel Logo"></p>
+
+<br>
+
 ## About LaraGigster
 
 LaraGigster is a youtube crash course project built based on [this video](https://www.youtube.com/watch?v=MYyJ4PuL4pY) posted by Traversy Media. 
 
-It was built as a system that intends to be the home of Laravel-based projects or jobs where the User (Gigster) have to sign-up to post the vacancies they have in their jobs/projects (Gigs).
+It is built as a system that intends to be the home of Laravel-based projects or jobs where the User (Gigster) have to sign-up to post the vacancies they have in their jobs/projects (Gigs).
 
 <br>
 
@@ -64,12 +69,4 @@ Last but not least, the project was build using these **version** of frameworks:
 - MySQL 8.2.0
 - Laravel 9.47.0
 
-With that, I humbly thank you.
-
-<br>
-
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
-
-<p align="center">
-LaraGigster is project that is built based on the Laravel Framework
-</p>
+So with that, I humbly thank you.

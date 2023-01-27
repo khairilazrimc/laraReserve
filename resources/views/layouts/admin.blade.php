@@ -30,16 +30,16 @@
                 </div>
                 <nav :class="{'block': open, 'hidden': !open}" class="flex-grow px-4 pb-4 md:block md:pb-0 md:overflow-y-auto">
                     
-                    <x-admin-nav-link :href="route('admin.categories.index')" :active="request()->routeIs(['admin.categories.index', 'admin.categories.create'])">
+                    <x-admin-nav-link :href="route('admin.categories.index')" :active="request()->routeIs(['admin.categories.index', 'admin.categories.create', 'admin.categories.edit'])">
                         {{ __('Categories') }}
                     </x-admin-nav-link>
-                    <x-admin-nav-link :href="route('admin.menus.index')" :active="request()->routeIs(['admin.menus.index', 'admin.menus.create'])">
+                    <x-admin-nav-link :href="route('admin.menus.index')" :active="request()->routeIs(['admin.menus.index', 'admin.menus.create', 'admin.menus.edit'])">
                         {{ __('Menus') }}
                     </x-admin-nav-link>
-                    <x-admin-nav-link :href="route('admin.tables.index')" :active="request()->routeIs(['admin.tables.index', 'admin.tables.create'])">
+                    <x-admin-nav-link :href="route('admin.tables.index')" :active="request()->routeIs(['admin.tables.index', 'admin.tables.create', 'admin.tables.edit'])">
                         {{ __('Tables') }}
                     </x-admin-nav-link>
-                    <x-admin-nav-link :href="route('admin.reservations.index')" :active="request()->routeIs(['admin.reservations.index', 'admin.reservations.create'])">
+                    <x-admin-nav-link :href="route('admin.reservations.index')" :active="request()->routeIs(['admin.reservations.index', 'admin.reservations.create', 'admin.reservations.edit'])">
                         {{ __('Reservations') }}
                     </x-admin-nav-link>
                     

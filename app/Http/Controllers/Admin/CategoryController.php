@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
 class CategoryController extends Controller
 {
@@ -36,18 +37,34 @@ class CategoryController extends Controller
         //
     }
 
-    public function edit($id)
+    public function edit(Category $category)
     {
-        //
+        return view('admin.categories.edit', compact('category'));
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, Category $category)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'description' => 'required'
+        ]);
+        $image = $category->image;
+        if($request->hasFile('image')) {
+            Storage::delete($category->image);
+            $image = $request->file('image')->store('public/categories');
+        }
+        $category->update([
+            'name' => $request->name,
+            'description' => $request->description,
+            'image' => $image
+        ]);
+        return to_route('admin.categories.index');
     }
 
-    public function destroy($id)
+    public function destroy(Category $category)
     {
-        //
+        Storage::delete($category->image);
+        $category->delete();
+        return to_route('admin.categories.index');
     }
 }

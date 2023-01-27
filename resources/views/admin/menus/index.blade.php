@@ -5,11 +5,11 @@
     </h2>
   </x-slot>
 
-  <div class="py-12">
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+  <div class="py-2">
+    <div class="mx-auto sm:px-6 lg:px-8">
         
       <div class="flex justify-end mt-5">
-        <a href="{{ route('admin.menus.create') }}" class="px-4 py-2 bg-indigo-300 hover:bg-indigo-400">Create Menu</a>
+        <a href="{{ route('admin.menus.create') }}" class="px-4 py-2 bg-white hover:bg-gray-300">Create Menu</a>
       </div>
         
       <div class="bg-white overflow-hidden shadow-sm mt-5">
@@ -17,27 +17,21 @@
             <table class="table-auto">
                 <thead>
                   <tr>
-                    <th>Categories</th>
-                    <th>Artist</th>
-                    <th>Year</th>
+                    <th class="p-3 text-left">Image</th>
+                    <th class="p-3 text-left">Name</th>
+                    <th class="p-3 text-left">Description</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>The Sliding Mr. Bones (Next Stop, Pottersville)</td>
-                    <td>Malcolm Lockyer</td>
-                    <td>1961</td>
-                  </tr>
-                  <tr>
-                    <td>Witchy Woman</td>
-                    <td>The Eagles</td>
-                    <td>1972</td>
-                  </tr>
-                  <tr>
-                    <td>Shining Star</td>
-                    <td>Earth, Wind, and Fire</td>
-                    <td>1975</td>
-                  </tr>
+
+                  @foreach ($menus as $menu)
+                    <tr>
+                      <td class="p-3"><img src="{{ Storage::url($menu->image) }}" class="w-32 h-16 rounded object-cover"></td>
+                      <td class="p-3">{{ $menu->name }}</td>
+                      <td class="p-3">{{ $menu->description }}</td>
+                    </tr>
+                  @endforeach
+
                 </tbody>
               </table>
           </div>

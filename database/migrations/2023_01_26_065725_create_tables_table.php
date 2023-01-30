@@ -19,6 +19,7 @@ return new class extends Migration
             $table->integer('guest_number');
             $table->string('status')->default('available');
             $table->string('location');
+            $table->string('image');
             $table->timestamps();
         });
     }

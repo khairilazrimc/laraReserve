@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Menu;
 use App\Models\Category;
+use App\Models\Table;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -47,7 +48,7 @@ class DatabaseSeeder extends Seeder
             'price' => '399.99', 
         ]);
         Menu::create([
-            'name' => 'Lamb Kebab Sticks and Veges too', 
+            'name' => 'Lamb Kebab Sticks and Veges Too', 
             'description' => 'A classic in every way, this Kebab Sticks will not go wrong while seasoned with a blend of Mediterranean Archipelagos Veges.',
             'image' => 'test',
             'price' => '199.99', 
@@ -69,6 +70,28 @@ class DatabaseSeeder extends Seeder
             'description' => 'All the flavours of only golden roast lamb, baked into a hearty stew. Serve over buttered cous for over the night.',
             'image' => 'test',
             'price' => '159.99', 
+        ]);
+
+        Table::create([
+            'name' => 'Front #1', 
+            'guest_number' => '4',
+            'location' => 'Front',
+            'status' => 'Complicated', 
+            'image' => 'test', 
+        ]);
+        Table::create([
+            'name' => 'Inside #1', 
+            'guest_number' => '4',
+            'location' => 'Inside',
+            'status' => 'Complicated', 
+            'image' => 'test', 
+        ]);
+        Table::create([
+            'name' => 'Outside #1', 
+            'guest_number' => '6',
+            'location' => 'Outside',
+            'status' => 'Complicated', 
+            'image' => 'test', 
         ]);
     }
 }

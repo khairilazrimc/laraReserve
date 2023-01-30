@@ -35,22 +35,16 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Menu::create([
-            'name' => 'Full House Delish Rack of Lamb Family', 
-            'description' => 'A whole family of roasted rack of lambs is the perfect showstopper, especially when it comes to Easter dinner.',
-            'image' => 'test',
-            'price' => '299.99', 
-        ]);
-        Menu::create([
-            'name' => 'Roast Gold Lamb Stew with Garlic and Rosemary', 
-            'description' => 'All the flavours of only golden roast lamb, baked into a hearty stew. Serve over buttered cous for over the night.',
-            'image' => 'test',
-            'price' => '159.99', 
-        ]);
-        Menu::create([
             'name' => 'Full House Festive Rack of Lamb Family', 
             'description' => 'Leg of lamb flavoured with rosemary, cloves, orange and cranberries makes the best festive day of the year.',
             'image' => 'test',
             'price' => '399.99', 
+        ]);
+        Menu::create([
+            'name' => 'Full House Delish Rack of Lamb Family', 
+            'description' => 'A whole family of roasted rack of lambs is the perfect showstopper, especially when it comes to Easter dinner.',
+            'image' => 'test',
+            'price' => '299.99', 
         ]);
         Menu::create([
             'name' => 'Lamb Kebab Sticks and Veges too', 
@@ -69,6 +63,12 @@ class DatabaseSeeder extends Seeder
             'description' => 'Behold, our signature dish from the gardens of Ovis Aries. Fed and served with tomatoes, surely one of its kind.',
             'image' => 'test',
             'price' => '179.99', 
+        ]);
+        Menu::create([
+            'name' => 'Roast Gold Lamb Stew with Garlic and Rosemary', 
+            'description' => 'All the flavours of only golden roast lamb, baked into a hearty stew. Serve over buttered cous for over the night.',
+            'image' => 'test',
+            'price' => '159.99', 
         ]);
     }
 }

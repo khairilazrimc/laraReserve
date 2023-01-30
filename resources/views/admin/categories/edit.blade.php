@@ -18,7 +18,7 @@
                 @csrf
                 @method('PUT')
 
-                <img src="{{ Storage::url($category->image) }}" class="w-32 h-32 object-cover align">
+                <img src="{{ Storage::url($category->image) }}" class="w-32 h-32 object-cover align border">
 
                 <label for="name" class="form-label inline-block mb-2 mt-5 text-gray-700">Name</label>
                 <input

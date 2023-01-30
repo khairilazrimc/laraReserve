@@ -11,7 +11,7 @@ return new class extends Migration
     {
         Schema::create('category_menu', function (Blueprint $table) {
             $table->foreignId('category_id')->constrained();
-            $table->foreignId('menu_id')->constrained();
+            $table->foreignId('menu_id')->constrained()->onDelete('cascade');
         });
     }
 

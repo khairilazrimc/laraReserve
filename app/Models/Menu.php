@@ -13,6 +13,6 @@ class Menu extends Model
 
     public function categories() 
     {
-        return $this->belongsToMany(Categories::class, 'category_menu');
+        return $this->belongsToMany(Category::class, 'category_menu');
     }
 }

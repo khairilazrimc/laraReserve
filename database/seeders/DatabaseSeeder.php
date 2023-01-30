@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Menu;
 use App\Models\Category;
 use Illuminate\Database\Seeder;
 
@@ -31,6 +32,43 @@ class DatabaseSeeder extends Seeder
             'name' => 'Golden Lamb', 
             'description' => 'Lamb of age more than 4 years old. Their meat, very the most juicy. Hmmm, yummie..',
             'image' => 'test', 
+        ]);
+
+        Menu::create([
+            'name' => 'Delish Rack of Lamb', 
+            'description' => 'A roasted rack of lamb is the perfect showstopper, especially when it comes to Easter dinner.',
+            'image' => 'test',
+            'price' => '99.99', 
+        ]);
+        Menu::create([
+            'name' => 'Roast Lamb Stew with Garlic and Rosemary', 
+            'description' => 'All the flavours of roast lamb, baked into a hearty stew. Serve over buttered cous for over the night.',
+            'image' => 'test',
+            'price' => '99.99', 
+        ]);
+        Menu::create([
+            'name' => 'Festive Rack of Lamb', 
+            'description' => 'Leg of lamb flavoured with rosemary, cloves, orange and cranberries makes the best festive day of the year.',
+            'image' => 'test',
+            'price' => '99.99', 
+        ]);
+        Menu::create([
+            'name' => 'Lamb Kebab', 
+            'description' => 'A classic in every way, this will not go wrong while seasoned with a blend of Mediterranean Archipelagos.',
+            'image' => 'test',
+            'price' => '99.99', 
+        ]);
+        Menu::create([
+            'name' => 'Seared Lamb Steak with Potato Mash & Mint Sauce', 
+            'description' => 'Known as the salmon of the land, these lean lamb steaks and vitamin-packed sides become the perfect couple of the day.',
+            'image' => 'test',
+            'price' => '99.99', 
+        ]);
+        Menu::create([
+            'name' => 'Relish Lamb Leg Steak With Olive and Tomatoes', 
+            'description' => 'Behold, our signature dish from the gardens of Ovis Aries. Fed and served with tomatoes, surely one of its kind.',
+            'image' => 'test',
+            'price' => '99.99', 
         ]);
     }
 }

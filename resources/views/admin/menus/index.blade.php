@@ -26,7 +26,7 @@
 
                   @foreach ($menus as $menu)
                     <tr class="border">
-                      <td class="p-3"><img src="{{ Storage::url($menu->image) }}" class="w-32 h-24 object-cover"></td>
+                      <td class="p-3"><img src="{{ Storage::url($menu->image) }}" class="w-32 h-24 object-cover border"></td>
                       <td class="p-3">{{ $menu->name }}</td>
                       <td class="p-3">{{ $menu->price }}</td>
                       <td class="p-3 flex space-x-1">

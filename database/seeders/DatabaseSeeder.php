@@ -44,7 +44,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Full House Delish Rack of Lamb Family', 
             'description' => 'A whole family of roasted rack of lambs is the perfect showstopper, especially when it comes to Easter dinner.',
             'image' => 'test',
-            'price' => '299.99', 
+            'price' => '399.99', 
         ]);
         Menu::create([
             'name' => 'Lamb Kebab Sticks and Veges too', 
@@ -59,7 +59,7 @@ class DatabaseSeeder extends Seeder
             'price' => '179.99', 
         ]);
         Menu::create([
-            'name' => 'Relish Lamb Leg Steak With Olive and Tomatoes', 
+            'name' => 'Relish Lamb Steak With Olive and Tomatoes', 
             'description' => 'Behold, our signature dish from the gardens of Ovis Aries. Fed and served with tomatoes, surely one of its kind.',
             'image' => 'test',
             'price' => '179.99', 

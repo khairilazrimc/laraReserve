@@ -34,7 +34,7 @@ class MenuController extends Controller
         ]);
 
         if ($request->has('categories')) {
-            // $menu->categories()->attach($request->categories);
+            $menu->categories()->attach($request->categories);
         }
 
         return to_route('admin.menus.index');

@@ -22,7 +22,8 @@
                     <th class="p-3 text-left">Date</th>
                     <th class="p-3 text-left">Table</th>
                     <th class="p-3 text-left">Guest</th>
-                  </tr>
+                    <th class="p-3 text-left">Action</th>
+              </tr>
                 </thead>
                 <tbody>
 

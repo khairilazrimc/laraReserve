@@ -20,6 +20,7 @@
               type="text"
               name="first_name"
               id="first_name"
+              value="{{ old('first_name') }}"
               class="form-control block w-full px-3 py-1.5 font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-600 focus:outline-none"/>
             @error('first_name') <p class="text-red-500 text-xs mt-1">{{ $message }}</p> @enderror
                         
@@ -28,6 +29,7 @@
               type="text"
               name="last_name"
               id="last_name"
+              value="{{ old('last_name') }}"
               class="form-control block w-full px-3 py-1.5 font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-600 focus:outline-none"/>
             @error('last_name') <p class="text-red-500 text-xs mt-1">{{ $message }}</p> @enderror
                         
@@ -36,6 +38,7 @@
               type="email"
               name="email"
               id="email"
+              value="{{ old('email') }}"
               class="form-control block w-full px-3 py-1.5 font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-600 focus:outline-none"/>
             @error('email') <p class="text-red-500 text-xs mt-1">{{ $message }}</p> @enderror
                         
@@ -44,6 +47,7 @@
               type="text"
               name="tel_number"
               id="tel_number"
+              value="{{ old('tel_number') }}"
               class="form-control block w-full px-3 py-1.5 font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-600 focus:outline-none"/>
             @error('tel_number') <p class="text-red-500 text-xs mt-1">{{ $message }}</p> @enderror
                         
@@ -52,6 +56,7 @@
               type="datetime-local"
               name="res_date"
               id="res_date"
+              value="{{ old('res_date') }}"
               class="form-control block w-full px-3 py-1.5 font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-600 focus:outline-none"/>
             @error('res_date') <p class="text-red-500 text-xs mt-1">{{ $message }}</p> @enderror
                         
@@ -60,6 +65,7 @@
               type="number"
               name="guest_number"
               id="guest_number"
+              value="{{ old('guest_number') }}"
               class="form-control block w-full px-3 py-1.5 font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-600 focus:outline-none"/>
             @error('guest_number') <p class="text-red-500 text-xs mt-1">{{ $message }}</p> @enderror
               

@@ -20,6 +20,7 @@
               type="text"
               name="name"
               id="name"
+              value="{{ old('name') }}"
               class="form-control block w-full px-3 py-1.5 font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-600 focus:outline-none"/>
             @error('name') <p class="text-red-500 text-xs mt-1">{{ $message }}</p> @enderror
         
@@ -28,7 +29,7 @@
               name="description"
               id="description"
               rows="3"
-              class="form-control block w-full px-3 py-1.5 font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-600 focus:outline-none"></textarea>
+              class="form-control block w-full px-3 py-1.5 font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-600 focus:outline-none">{{ old('description') }}</textarea>
             @error('description') <p class="text-red-500 text-xs mt-1">{{ $message }}</p> @enderror
         
             <label for="image" class="form-label inline-block mb-2 mt-5 text-gray-700">Image</label>
@@ -36,6 +37,7 @@
               type="file"
               name="image"
               id="image"
+              value="{{ old('image') }}"
               class="form-control block w-full px-3 py-1.5 font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-600 focus:outline-none">
             @error('image') <p class="text-red-500 text-xs mt-1">{{ $message }}</p> @enderror
 

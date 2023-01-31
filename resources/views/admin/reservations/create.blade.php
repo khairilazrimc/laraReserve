@@ -9,38 +9,69 @@
       <div class="mx-auto sm:px-6 lg:px-8">
           
           <div class="flex mt-5">
-            <a href="{{ route('admin.reservations.index') }}" class="px-4 py-2 bg-white hover:bg-gray-300">< Back</a>
+
           </div>
           
-          <div class="flex bg-white overflow-hidden shadow-sm mt-5">
-            <div class="p-5 mb-3 w-full">
-              <form method="POST" action="{{ route('admin.reservations.store') }}" enctype="multipart/form-data">
+          <div class="bg-white overflow-hidden shadow-sm mt-5">
+            <div class="p-5 border w-full">
+              <form method="POST" action="{{ route('admin.reservations.store') }}" enctype="multipart/form-data" >
                 @csrf
                 
-                <label for="name" class="form-label inline-block mb-2 mt-5 text-gray-700">Name</label>
+                <label for="first_name" class="form-label inline-block mb-2 mt-5 text-gray-700">First Name</label>
                 <input
                   type="text"
-                  name="name"
-                  id="name"
-                  class=" form-control text-xl block w-full px-3 py-1.5 font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none"/>
-            
-                <label for="description" class="form-label inline-block mb-2 mt-5 text-gray-700">Description</label>
-                <textarea
-                  name="description"
-                  id="description"
-                  rows="3"
-                  class=" form-control block w-full px-3 py-1.5 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none">
-                </textarea>
-            
-                <label for="image" class="form-label inline-block mb-2 mt-5 text-gray-700">Image</label>
-                <input 
-                  type="file"
-                  name="image"
-                  id="image"
-                  class=" form-control block w-full px-2 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none">
-
-                <div class="flex justify-end">
-                  <button type="submit" class="px-4 py-2 bg-white hover:bg-emerald-300 mt-5 border">Create Reservation</button>
+                  name="first_name"
+                  id="first_name"
+                  class="form-control block w-full px-3 py-1.5 font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-600 focus:outline-none"/>
+                            
+                <label for="last_name" class="form-label inline-block mb-2 mt-5 text-gray-700">Last Name</label>
+                <input
+                  type="text"
+                  name="last_name"
+                  id="last_name"
+                  class="form-control block w-full px-3 py-1.5 font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-600 focus:outline-none"/>
+                            
+                <label for="email" class="form-label inline-block mb-2 mt-5 text-gray-700">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  class="form-control block w-full px-3 py-1.5 font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-600 focus:outline-none"/>
+                            
+                <label for="tel_number" class="form-label inline-block mb-2 mt-5 text-gray-700">Phone Number</label>
+                <input
+                  type="text"
+                  name="tel_number"
+                  id="tel_number"
+                  class="form-control block w-full px-3 py-1.5 font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-600 focus:outline-none"/>
+                            
+                <label for="res_date" class="form-label inline-block mb-2 mt-5 text-gray-700">Reservation Date</label>
+                <input
+                  type="datetime-local"
+                  name="res_date"
+                  id="res_date"
+                  class="form-control block w-full px-3 py-1.5 font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-600 focus:outline-none"/>
+                            
+                <label for="guest_number" class="form-label inline-block mb-2 mt-5 text-gray-700">Guest Number</label>
+                <input
+                  type="number"
+                  name="guest_number"
+                  id="guest_number"
+                  class="form-control block w-full px-3 py-1.5 font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-600 focus:outline-none"/>
+                  
+                <label for="table_id" class="form-label inline-block mb-2 mt-5 text-gray-700">Table</label>
+                <select
+                  name="table_id" 
+                  id="table_id" 
+                  class="form-control block w-full px-3 py-1.5 font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-600 focus:outline-none">
+                  @foreach ($tables as $table)
+                    <option value="{{ $table->id }}">{{ $table->name }}</option>
+                  @endforeach
+                </select>
+                  
+                <div class="flex justify-end gap-x-1">
+                  <a href="{{ route('admin.reservations.index') }}" class="px-4 py-2 mt-5 bg-white hover:bg-rose-300 border border-rose-300">Cancel</a>
+                  <button type="submit" class="px-4 py-2 bg-white hover:bg-emerald-300 mt-5 border border-emerald-300">Create Reservation</button>
                 </div>
               </form>
             </div>        

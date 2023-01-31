@@ -43,9 +43,9 @@
 
                 <label for="location" class="form-label inline-block mb-2 mt-5 text-gray-700">Location</label>
                 <select
-                name="location" 
-                id="location" 
-                class="form-control block w-full px-3 py-1.5 font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-600 focus:outline-none">
+                  name="location" 
+                  id="location" 
+                  class="form-control block w-full px-3 py-1.5 font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-600 focus:outline-none">
                   @foreach (App\Enums\TableLocation::cases() as $location)
                     <option value="{{ $location->value }}">{{ $location->name }}</option>
                   @endforeach
@@ -58,9 +58,9 @@
                   id="image"
                   class="form-control block w-full px-3 py-1.5 font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-600 focus:outline-none">
                   
-                  <div class="flex justify-end gap-x-1">
-                    <a href="{{ route('admin.tables.index') }}" class="px-4 py-2 mt-5 bg-white hover:bg-rose-300 border border-rose-300">Cancel</a>
-                  <button type="submit" class="px-4 py-2 bg-white hover:bg-emerald-300 mt-5 border border-emerald-300">Create Category</button>
+                <div class="flex justify-end gap-x-1">
+                  <a href="{{ route('admin.tables.index') }}" class="px-4 py-2 mt-5 bg-white hover:bg-rose-300 border border-rose-300">Cancel</a>
+                  <button type="submit" class="px-4 py-2 bg-white hover:bg-emerald-300 mt-5 border border-emerald-300">Create Table</button>
                 </div>
               </form>
             </div>        

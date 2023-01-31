@@ -65,7 +65,7 @@
                   
                   <div class="flex justify-end gap-x-1">
                     <a href="{{ route('admin.tables.index') }}" class="px-4 py-2 mt-5 bg-white hover:bg-rose-300 border border-rose-300">Cancel</a>
-                  <button type="submit" class="px-4 py-2 bg-white hover:bg-emerald-300 mt-5 border border-emerald-300">Update Tables</button>
+                  <button type="submit" class="px-4 py-2 bg-white hover:bg-emerald-300 mt-5 border border-emerald-300">Update Table</button>
                 </div>
               </form>
             </div>        

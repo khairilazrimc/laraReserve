@@ -9,26 +9,38 @@
     <div class="mx-auto sm:px-6 lg:px-8">
         
       <div class="flex justify-end mt-5">
-        <a href="{{ route('admin.reservations.create') }}" class="px-4 py-2 bg-white hover:bg-gray-300">Create Reservation</a>
+        <a href="{{ route('admin.reservations.create') }}" class="px-4 py-2 bg-white hover:bg-gray-300 border">Create Reservation</a>
       </div>
         
       <div class="bg-white overflow-hidden shadow-sm mt-5">
-          <div class="p-6 text-gray-900">
+          <div class="text-gray-900">
             <table class="table-auto">
                 <thead>
-                  <tr>
-                    <th class="p-3 text-left">Image</th>
+                  <tr class="border">
                     <th class="p-3 text-left">Name</th>
-                    <th class="p-3 text-left">Description</th>
+                    <th class="p-3 text-left">Contact</th>
+                    <th class="p-3 text-left">Date</th>
+                    <th class="p-3 text-left">Table</th>
+                    <th class="p-3 text-left">Guest</th>
                   </tr>
                 </thead>
                 <tbody>
 
                   @foreach ($reservations as $reservation)
-                    <tr>
-                      <td class="p-3"><img src="{{ Storage::url($reservation->image) }}" class="w-32 h-16 rounded object-cover"></td>
-                      <td class="p-3">{{ $reservation->name }}</td>
-                      <td class="p-3">{{ $reservation->description }}</td>
+                    <tr class="border">
+                      <td class="p-3">{{ $reservation->first_name . " " . $reservation->last_name }}</td>
+                      <td class="p-3">{{ $reservation->email }}<br>Phone: {{ $reservation->tel_number }}</td>
+                      <td class="p-3">{{ $reservation->res_date }}</td>
+                      <td class="p-3">{{ $reservation->table_id }}</td>
+                      <td class="p-3">{{ $reservation->guest_number }}</td>
+                      <td class="p-3 flex space-x-1">
+                        <a href="{{ route('admin.reservations.edit', $reservation->id) }}" class="px-4 py-2 bg-white hover:bg-violet-300 border border-violet-300">Edit</a>
+                        <form action="{{ route('admin.reservations.destroy', $reservation->id) }}" method="POST" onsubmit="return confirm('Please confirm to delete this data?');">
+                          @csrf
+                          @method('DELETE')
+                          <button type="submit" class="px-4 py-2 bg-white hover:bg-rose-300 border border-rose-300">Delete</button>
+                        </form>
+                      </td>
                     </tr>
                   @endforeach
 

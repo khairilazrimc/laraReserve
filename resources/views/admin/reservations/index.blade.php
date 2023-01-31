@@ -32,7 +32,7 @@
                       <td class="p-3">{{ $reservation->first_name . " " . $reservation->last_name }}</td>
                       <td class="p-3">{{ $reservation->email }}<br>Phone: {{ $reservation->tel_number }}</td>
                       <td class="p-3">{{ $reservation->res_date }}</td>
-                      <td class="p-3">{{ $reservation->table_id }}</td>
+                      <td class="p-3">{{ $reservation->table->name }}</td>
                       <td class="p-3">{{ $reservation->guest_number }}</td>
                       <td class="p-3 flex space-x-1">
                         <a href="{{ route('admin.reservations.edit', $reservation->id) }}" class="px-4 py-2 bg-white hover:bg-violet-300 border border-violet-300">Edit</a>

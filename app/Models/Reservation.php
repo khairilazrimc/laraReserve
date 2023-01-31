@@ -11,4 +11,12 @@ class Reservation extends Model
 
     protected $fillable = ['first_name', 'last_name', 'tel_number', 'email', 'table_id', 'res_date', 'guest_number'];
 
+    protected $dates = [
+        'res_date'
+    ];
+
+    public function table() 
+    {
+        return $this->belongsTo(Table::class);
+    }
 }

@@ -35,12 +35,12 @@
 
             <label for="status" class="form-label inline-block mb-2 mt-5 text-gray-700">Status</label>
             <select
-            name="status" 
-            id="status" 
-            class="form-control block w-full px-3 py-1.5 font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-600 focus:outline-none">
+              name="status" 
+              id="status" 
+              class="form-control block w-full px-3 py-1.5 font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-600 focus:outline-none">
               <option value=""></option>
               @foreach (App\Enums\TableStatus::cases() as $status)
-                <option value="{{ $status->value }}">{{ $status->name }}</option>
+                <option value="{{ $status->value }}" @selected(old('status') == $status->value)>{{ $status->name }}</option>
               @endforeach
             </select>
             @error('status') <p class="text-red-500 text-xs mt-1">{{ $message }}</p> @enderror
@@ -52,7 +52,7 @@
               class="form-control block w-full px-3 py-1.5 font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-600 focus:outline-none">
               <option value=""></option>
               @foreach (App\Enums\TableLocation::cases() as $location)
-                <option value="{{ $location->value }}">{{ $location->name }}</option>
+                <option value="{{ $location->value }}" @selected(old('location') == $location->value)>{{ $location->name }}</option>
               @endforeach
             </select>
             @error('location') <p class="text-red-500 text-xs mt-1">{{ $message }}</p> @enderror

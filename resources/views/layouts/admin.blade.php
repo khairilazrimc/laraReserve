@@ -59,7 +59,7 @@
               x-transition:leave="transition ease-in duration-75"
               x-transition:leave-start="transform opacity-100 scale-100"
               x-transition:leave-end="transform opacity-0 scale-95"
-              class="absolute right-0 w-full mt-2 origin-top-right shadow-lg">
+              class="absolute right-0 w-full mt-2 origin-top-right shadow-md">
               <div class="px-2 py-2 bg-white shadow dark-mode:bg-gray-700">
                 <form method="POST" action="{{ route('logout') }}">
                   @csrf
@@ -74,16 +74,14 @@
           </div>
 
           @if (session()->has('success'))
-            <div class="relative h-1/4">
-              <div class="absolute bg-white py-2 px-0 bottom-5 shadow-md ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:rounded-lg sm:px-10">
-                <div class="mx-auto max-w-md">
-                  <p class="flex place-content-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-green-600 w-12 h-12"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                  </p>
-                  <p class="text-center">
-                    {{ session()->get('success') }}
-                  </p>
-                </div>
+            <div class="relative bg-white py-2 px-0 mt-20 shadow-md ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:px-10">
+              <div class="mx-auto max-w-md">
+                <p class="flex place-content-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-green-600 w-12 h-12"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                </p>
+                <p class="text-center">
+                  {{ session()->get('success') }}
+                </p>
               </div>
             </div>
           @endif
@@ -92,20 +90,8 @@
       </div>
 
       <!-- Page Content -->
-      <main class=" ">
-
-        {{-- @if (session()->has('success'))
-          <div class="absolute bg-white p-5 bottom-5 left-5 shadow-sm ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:rounded-lg sm:px-10">
-            <div class="mx-auto max-w-md">
-              <p class="flex">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-green-600 w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg> &nbsp; {{ session()->get('success') }}
-              </p>
-            </div>
-          </div>
-        @endif --}}
-      
+      <main class="">
         {{ $slot }}
-
       </main>
 
     </div>

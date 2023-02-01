@@ -26,7 +26,7 @@ class ReservationController extends Controller
     public function store(ReservationStoreRequest $request)
     {
         Reservation::create($request->validated());
-        return to_route('admin.reservations.index');
+        return to_route('admin.reservations.index')->with('success', 'Reservation successfully created.');
     }
 
     public function show($id)

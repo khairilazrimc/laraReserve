@@ -32,7 +32,7 @@ class TableController extends Controller
             'location' => $request->location,
             'image' => $image
         ]);
-        return to_route('admin.tables.index');
+        return to_route('admin.tables.index')->with('success', 'Table successfully created.');
     }
 
     public function show($id)
@@ -66,13 +66,14 @@ class TableController extends Controller
             'location' => $request->location,
             'image' => $image
         ]);
-        return to_route('admin.tables.index');
+        return to_route('admin.tables.index')->with('success', 'Table successfully updated.');
     }
 
     public function destroy(Table $table)
     {
         Storage::delete($table->image);
+        $table->reservations()->delete();
         $table->delete();
-        return to_route('admin.tables.index');
+        return to_route('admin.tables.index')->with('success', 'Table successfully deleted.');
     }
 }

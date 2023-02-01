@@ -38,7 +38,7 @@ class MenuController extends Controller
             $menu->categories()->attach($request->categories);
         }
 
-        return to_route('admin.menus.index');
+        return to_route('admin.menus.index')->with('success', 'Menu successfully created.');
     }
 
     public function edit(Menu $menu)
@@ -68,14 +68,15 @@ class MenuController extends Controller
         if ($request->has('categories')) {
             $menu->categories()->sync($request->categories);
         }
-        return to_route('admin.menus.index');
+        return to_route('admin.menus.index')->with('success', 'Menu successfully updated.');
     }
 
     public function destroy(Menu $menu)
     {
         Storage::delete($menu->image);
         // $menu->categories()->delete(); // many-to-many relationship
+        // $menu->categories()->detach(); // many-to-many relationship
         $menu->delete();
-        return to_route('admin.menus.index');
+        return to_route('admin.menus.index')->with('success', 'Menu successfully deleted.');
     }
 }

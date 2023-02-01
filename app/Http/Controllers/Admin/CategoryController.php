@@ -30,7 +30,7 @@ class CategoryController extends Controller
             'description' => $request->description,
             'image' => $image
         ]);
-        return to_route('admin.categories.index');
+        return to_route('admin.categories.index')->with('success', 'Category successfully created.');
     }
 
     public function show($id)
@@ -59,7 +59,7 @@ class CategoryController extends Controller
             'description' => $request->description,
             'image' => $image
         ]);
-        return to_route('admin.categories.index');
+        return to_route('admin.categories.index')->with('success', 'Category successfully updated.');
     }
 
     public function destroy(Category $category)
@@ -67,6 +67,6 @@ class CategoryController extends Controller
         Storage::delete($category->image);
         // $category->menus()->delete(); // many-to-many relationship
         $category->delete();
-        return to_route('admin.categories.index');
+        return to_route('admin.categories.index')->with('success', 'Category successfully deleted.');
     }
 }

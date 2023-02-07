@@ -16,7 +16,7 @@
                 <div class="w-full bg-gray-200 rounded-full flex justify-end">
                   <div class="w-40 p-1 text-xs font-medium leading-none text-center text-blue-100 bg-blue-600 rounded-full">Step 2</div>
                 </div>
-                <form method="POST" action="">
+                <form method="POST" action="{{ route('reservations.store.step.two') }}">
                   @csrf
                   
                   <label for="table_id" class="form-label inline-block mb-2 mt-5 text-gray-700">Table</label>

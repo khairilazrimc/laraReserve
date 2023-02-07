@@ -5,7 +5,7 @@
 
       @foreach ($menus as $menu)
         <div class="max-w-xs mx-4 mb-2 rounded-lg shadow-lg">
-          <a href="{{ route('categories.show', $menu->id) }}" class="px-4 py-2 text-green-50">
+          <a href="#" class="px-4 py-2 text-green-50">
             <img class="w-full h-48" src="{{ Storage::url($menu->image) }}"
               alt="Image" />
             <div class="px-6 py-4">

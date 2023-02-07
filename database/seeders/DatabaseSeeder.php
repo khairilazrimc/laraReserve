@@ -37,7 +37,7 @@ class DatabaseSeeder extends Seeder
 
         Menu::create([
             'name' => 'Full House Festive Rack of Lamb Family', 
-            'description' => 'Leg of lamb flavoured with rosemary, cloves, orange and cranberries makes the best festive day of the year.',
+            'description' => 'A whole family of lamb\'s leg flavoured with rosemary, cloves, orange and cranberries makes the best festive day of the year.',
             'image' => 'test',
             'price' => '399.99', 
         ]);

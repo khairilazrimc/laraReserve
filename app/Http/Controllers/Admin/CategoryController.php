@@ -66,6 +66,7 @@ class CategoryController extends Controller
     {
         Storage::delete($category->image);
         // $category->menus()->delete(); // many-to-many relationship
+        // $category->menus()->detach(); // many-to-many relationship
         $category->delete();
         return to_route('admin.categories.index')->with('success', 'Category successfully deleted.');
     }

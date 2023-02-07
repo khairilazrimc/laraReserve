@@ -6,11 +6,18 @@ use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\TableController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Fronted\WelcomeController;
 use App\Http\Controllers\Admin\ReservationController;
+use App\Http\Controllers\Fronted\MenuController as FrontedMenuController;
+use App\Http\Controllers\Fronted\CategoryController as FrontedCategoryController;
+use App\Http\Controllers\Fronted\ReservationController as FrontedReservationController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [WelcomeController::class, 'index']);
+Route::get('/categories', [FrontedCategoryController::class, 'index'])->name('categories.index');
+Route::get('/categories/{category}', [FrontedCategoryController::class, 'show'])->name('categories.show');
+Route::get('/menus', [FrontedMenuController::class, 'index'])->name('menus.index');
+Route::get('/reservation/step-one', [FrontedReservationController::class, 'stepOne'])->name('reservations.step.one');
+Route::get('/reservation/step-two', [FrontedReservationController::class, 'stepTwo'])->name('reservations.step.two');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

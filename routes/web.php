@@ -17,7 +17,10 @@ Route::get('/categories', [FrontedCategoryController::class, 'index'])->name('ca
 Route::get('/categories/{category}', [FrontedCategoryController::class, 'show'])->name('categories.show');
 Route::get('/menus', [FrontedMenuController::class, 'index'])->name('menus.index');
 Route::get('/reservation/step-one', [FrontedReservationController::class, 'stepOne'])->name('reservations.step.one');
+Route::post('/reservation/step-one', [FrontedReservationController::class, 'storeStepOne'])->name('reservations.store.step.one');
 Route::get('/reservation/step-two', [FrontedReservationController::class, 'stepTwo'])->name('reservations.step.two');
+Route::post('/reservation/step-two', [FrontedReservationController::class, 'storeStepTwo'])->name('reservations.store.step.two');
+Route::get('/thankyou', [WelcomeController::class, 'thankyou'])->name('thankyou');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

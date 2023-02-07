@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Carbon\Carbon;
 use App\Models\Table;
+use App\Enums\TableStatus;
 use App\Models\Reservation;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -19,12 +21,22 @@ class ReservationController extends Controller
 
     public function create()
     {
-        $tables = Table::all();
+        $tables = Table::where('status', TableStatus::Available)->get();
         return view('admin.reservations.create', compact('tables'));
     }
 
     public function store(ReservationStoreRequest $request)
     {
+        $table = Table::findOrFail($request->table_id);
+        if($request->guest_number > $table->guest_number){
+          return back()->with('warning', 'Maximum number of guest is ' . $table->guest_number . ' pax.');
+        }
+        $request_date = Carbon::parse($request->res_date);
+        foreach ($table->reservations as $res) {
+          if($res->res_date->format('Y-m-d') == $request_date->format('Y-m-d')){
+            return back()->with('warning', 'This table is already reserved for this date.');
+          }
+        }
         Reservation::create($request->validated());
         return to_route('admin.reservations.index')->with('success', 'Reservation successfully created.');
     }

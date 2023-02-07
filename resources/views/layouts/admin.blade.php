@@ -86,6 +86,21 @@
             </div>
           @endif
 
+          @if (session()->has('warning'))
+          <div class="relative bg-white py-2 px-0 mt-20 shadow-md ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:px-10">
+            <div class="mx-auto max-w-md">
+              <p class="flex place-content-center">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-yellow-600 w-12 h-12">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+                </svg>
+              </p>
+              <p class="text-center">
+                {{ session()->get('warning') }}
+              </p>
+            </div>
+          </div>
+        @endif
+
         </nav>
       </div>
 

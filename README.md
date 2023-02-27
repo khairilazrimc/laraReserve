@@ -17,7 +17,6 @@ Guest
 - View Restaurant Website
 - View Categories & Menus
 - Make Reservations
-- Register Account
 
 Admin
 - Create, Edit, Delete Categories
